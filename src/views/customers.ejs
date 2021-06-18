@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crudsqlsimple</title>
+</head>
+<body>  
+
+    <nav>
+        <a href="/">Home</a>
+    </nav>
+    <hr>
+
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>nombre</th>
+                <th>direccions</th>
+                <th>telefono</th>
+                <th>acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let i=0; i<data.length; i++) { %>
+
+                <tr>
+                    <td><%= data[i].id %></td>
+                    <td><%= data[i].name %></td>
+                    <td><%= data[i].address %></td>
+                    <td><%= data[i].phone %></td>
+                    <td></td>
+                    
+                </tr>
+
+            <% } %>
+        </tbody>
+    </table>
+
+    <hr>
+    <h3>Agregar</h3>
+    <form action="/add" method="post">
+        <div>
+            <input type="text" name="name" placeholder="Nombre">
+        </div>
+        <div>
+            <input type="text" name="address" placeholder="direccion">
+        </div>
+        <div>
+            <input type="text" name="phone" placeholder="telefono">
+        </div>
+        <div>
+            <input type="submit" value="Guardar">
+        </div>
+    </form>
+
+</body>
+</html>

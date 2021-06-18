@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/flatly/bootstrap.min.css">
     <title>crudsqlsimple</title>
 </head>
-<body>  
+<body class="p-2">  
 
     <nav>
         <a href="/">Home</a>
     </nav>
     <hr>
 
-    <table>
+    <table class="table table-bordered">
         <thead>
             <tr>
                 <th>id</th>
@@ -31,7 +32,10 @@
                     <td><%= data[i].name %></td>
                     <td><%= data[i].address %></td>
                     <td><%= data[i].phone %></td>
-                    <td></td>
+                    <td>
+                        <a href="/delete/<%= data[i].id %>">[Delete]</a> / 
+                        <a href="/edit/<%= data[i].id %>">[Edit]</a>
+                    </td>
                     
                 </tr>
 

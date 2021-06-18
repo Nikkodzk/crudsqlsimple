@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/flatly/bootstrap.min.css">
+    <title>crudsqlsimple</title>
+</head>
+<body class="p-2">  
+
+    <nav>
+        <a href="/">Home</a>
+    </nav>
+    <hr>
+
+   
+    <h3>Editar</h3>
+    <form action="/actualizar/<%= data.id %>" method="post">
+        <div>
+            <input type="text" name="name" value="<%= data.name %>">
+        </div>
+        <div>
+            <input type="text" name="address" value="<%= data.address %>">
+        </div>
+        <div>
+            <input type="text" name="phone" value="<%= data.phone %>">
+        </div>
+        <div>
+            <input type="submit" value="Actualizar">
+        </div>
+    </form>
+
+</body>
+</html>

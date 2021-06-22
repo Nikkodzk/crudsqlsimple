@@ -20,13 +20,19 @@ app.set('view engine','ejs');
 
 // middlewares  y rutas
 app.use(morgan('dev')) 
-app.use(myConnection(mysql,{    // ejecuto myConnection que recibe mysql y un objeto con las configuraciones
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    port: 3306,
-    database: 'crudsqlsimple'
-}, 'single' ));
+try{
+    app.use(myConnection(mysql,{    // ejecuto myConnection que recibe mysql y un objeto con las configuraciones
+        host: 'localhost',
+        user: 'root',
+        password: '',
+        port: 3306,
+        database: 'crudsqlsimple'
+    }, 'single' ));
+    console.log('Conectado a MySQL')
+}
+catch(error){
+    console.log('ERROR al conectarse a MySQL', error)
+}
 app.use(express.urlencoded({extended: false}));
 app.use('/', customerRoutes);   // rutas
 express.static(path.join(__dirname,'public'))  // static files
